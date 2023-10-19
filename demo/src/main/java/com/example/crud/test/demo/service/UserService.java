@@ -55,7 +55,13 @@ public class UserService {
     }
 
     public List<User> getAllUsers(){
-        List<>
+        List<User> users = userRep.findAll();
+        return users;
+    }
+
+    public List<User> findUser(String keyword){
+        List<User> resultUsers = userRep.searchUser(keyword);
+        return resultUsers;
     }
 }
 

@@ -30,5 +30,12 @@ public class UserController {
         return new UserServiceResponse("Delete Successful",null);
     }
 
-
+    @GetMapping("/all")
+    public UserServiceResponse getAllUsers(){
+        return new UserServiceResponse("Success",userService.getAllUsers());
+    }
+    @GetMapping("/find")
+    public UserServiceResponse findUser(@RequestParam("keyword") String keyword){
+        return new UserServiceResponse("Success",userService.findUser(keyword));
+    }
 }
